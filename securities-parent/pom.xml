@@ -131,5 +131,6 @@
 		<module>securities-regiter</module>
 		<module>securities-common</module>
 		<module>securities-account</module>
+		<module>securiies-personal</module>
 	</modules>
 </project>
