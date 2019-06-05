@@ -132,5 +132,8 @@
 		<module>securities-common</module>
 		<module>securities-account</module>
 		<module>securiies-personal</module>
+		<module>securities-trade</module>
+		<module>securities-manager</module>
+		<module>securities-personal</module>
 	</modules>
 </project>
