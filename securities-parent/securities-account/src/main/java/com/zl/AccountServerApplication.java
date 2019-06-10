@@ -46,8 +46,8 @@ import org.springframework.context.annotation.ImportResource;
  * classpath*:/dao/*.xml在com/zl/dao目录下,
  * 扫描com.zl.dao包下所有的.xml文件 @ImportResource(locations = {"classpath:mapper/*Mapper.xml"})
  */
-//@ImportResource(locations = {"classpath*:mapper/*Mapper.xml"})
-@ImportResource(locations = {"classpath*:/dao/*.xml"}) 
+@ImportResource(locations = {"classpath*:mapper/*Mapper.xml"})
+//@ImportResource(locations = {"classpath*:/dao/*.xml"}) 
 
 /**一次性扫描com.zl.dao包下的所有Mapper接口*/
 @MapperScan("com.zl.dao")

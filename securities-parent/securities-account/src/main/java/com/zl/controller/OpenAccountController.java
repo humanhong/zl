@@ -3,8 +3,8 @@ package com.zl.controller;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.zl.projo.Grades;
+import com.zl.projo.MD5;
 @Controller
 @EnableAutoConfiguration//自动配置，相当于配置了spring文件
 public class OpenAccountController {
@@ -23,38 +23,29 @@ public class OpenAccountController {
 	
 	
 	@RequestMapping("/salesDepartment")
-	public String salesDepartment(String provence,String city,String area) {//开户地信息		
-		  System.out.println("开户地信息："+provence);			 
+	public String salesDepartment(String provence,String city,String area) {//开户地信息					 
 		  return "accounttype.html";		 
 	}
 	
 	
 	@RequestMapping("/accounttype")
-	public String accounttype(String shanghaiA,String shenzhenB) {//选择的开户类型		
-		  System.out.println("开户省份：");			 
+	public String accounttype(String shanghaiA,String shenzhenB) {//选择的开户类型				 
 		  return "transactionpassword.html";		 
 	}
 	
 	
 	@RequestMapping("/transactionpassword")
 	public String transactionpassword(String transactionpassword) {//设置交易密码		
-		  System.out.println("交易密码是");			 
+		String pswd=MD5.encode(transactionpassword);
+		System.out.println("加密后的交易密码是:"+pswd);			 
 		  return "selectbank.html";		 
 	}
 	
 	
 	@RequestMapping("/selectbank")
-	public String selectbank() {//设置银行账号		
-		  System.out.println("保存了银行");			 
-		/* return "uploadvideo.html"; */
+	public String selectbank() {//设置银行账号				 
 		  return "finishaccount.html";
 	}
 	
-	
-	/*
-	 * @RequestMapping("/uploadvideo") public String uploadvideo(String
-	 * transactionpassword) {//上传视频认证 System.out.println("得到了视频认证"); return
-	 * "finishaccount.html"; }
-	 */
-	
+
 }

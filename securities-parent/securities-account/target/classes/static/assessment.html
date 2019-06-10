@@ -24,6 +24,46 @@
     function gonback(){
     	location.href="realname.html"
     }
+    
+    function go(){
+    	/* 先得到每一个radio的值，确保其不能为空，如果为空就提示，全部为空就进入下一页 */
+    	var addressID1 = $("input[name='radio1']:checked").val();
+		var addressID2 = $("input[name='radio2']:checked").val();
+		var addressID3 = $("input[name='radio3']:checked").val();
+		var addressID4 = $("input[name='radio4']:checked").val();
+		var addressID5 = $("input[name='radio5']:checked").val();
+		var addressID6 = $("input[name='radio6']:checked").val();
+		var addressID7 = $("input[name='radio7']:checked").val();
+		var addressID8 = $("input[name='radio8']:checked").val();
+		var addressID9 = $("input[name='radio9']:checked").val();
+		var addressID10 = $("input[name='radio10']:checked").val();
+		var addressID11 = $("input[name='radio11']:checked").val();
+		var addressID12 = $("input[name='radio12']:checked").val();
+		var addressID13 = $("input[name='radio13']:checked").val();
+		var addressID14 = $("input[name='radio14']:checked").val();
+		var addressID15 = $("input[name='radio15']:checked").val();
+		if(addressID1==undefined||
+		   addressID2==undefined||
+		   addressID3==undefined||
+		   addressID4==undefined||
+		   addressID5==undefined||
+		   addressID6==undefined||
+		   addressID7==undefined||
+		   addressID8==undefined||
+		   addressID9==undefined||
+		   addressID10==undefined||
+		   addressID11==undefined||
+		   addressID12==undefined||
+		   addressID13==undefined||
+		   addressID14==undefined||
+		   addressID15==undefined
+		){
+			alert("风险评估需要填写完每一道题!")
+		}else{
+			$("#searchForm").submit() ; 
+		}
+		
+	 }
     </script>
 </head>
 <body data-type="widgets">
@@ -305,7 +345,7 @@
             
                 
                     
-   <!-- 风险评估块      --> <!-- action="/updateRiskAssessment?"+  method="get" -->
+   <!-- 风险评估块      -->
                         <form class="am-form tpl-form-line-form " id="searchForm" action="/updateRiskAssessment?"+  method="get">
                             <div class=am-form-group">
                                 <h3>
@@ -602,25 +642,22 @@
                                     <label class="am-radio">
                                         <input type="radio" name="radio15" value="7" data-am-ucheck>以上所有产品以及其他产品
                                     </label>
-                                    <br/>   
+                                    <br/> 
+                                    
+           <!-- 前端提示评估需要填写每一道题  --> 
           <div class="am-u-sm-9">
                <input type="button" value="上一步" style="background-color : blue"  onclick="gonback()">
                   <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-               <input type="submit" value="下一步" style="background-color : blue" >
+               <!-- <input type="submit" value="下一步" style="background-color : blue" > -->
+               <input type="button" value="下一步" style="background-color : blue" onclick="go()">
              
           </div> 
                                 </div>
                             </div>
                         </form>
-                
-   <!--  <script type="text/javascript">
-    /* console.info($("#searchForm").serialize()); */
-    var str=$("#searchForm").serialize();    
-    </script>  -->       
+    
                         
-                        
-                        
-                        
+  
                     </div>
                 </div>
             </div>

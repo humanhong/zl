@@ -1,5 +1,4 @@
 package com.zl.projo;
-
 public class Grades {
 private Integer radio1=1;
 private Integer radio2=1;
